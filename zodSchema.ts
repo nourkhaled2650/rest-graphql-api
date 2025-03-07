@@ -10,6 +10,7 @@ export const envSchema = z.object({
     ])
     .default("development"),
   API_TYPE: z.union([z.literal("rest"), z.literal("graphql")]).default("rest"),
+  API_VERSION: z.string().default("v1"),
   PORT: z.coerce.number().int().min(1).max(65535).default(4000),
   DB_HOST: z.string(),
   DB_PORT: z.coerce.number().int().min(1).max(65535).default(3306),
